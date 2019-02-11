@@ -11,7 +11,7 @@
 ### Creating an environment from an environment.yml file
     `conda env create -f environment.yml`
 
-## Installed package
+## Packages
 See `environment.yml`
 
 List:
