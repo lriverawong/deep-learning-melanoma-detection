@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# sets up sshfs and remote tunnel for jupyter
+
+if [ "$1" == "up" ]; then
+  echo "connecting to server (sshfs and ssh tunnel)"
+  # needs sshfs package
+  sshfs -o IdentityFile=/home/<localuser>/.ssh/id_rsa,idmap=user <remoteuser>@130.15.15.4:/home/<remoteuser> /home/<localuser>/queensServer
+
+  #ssh -N -L localhost:8888:localhost:8888 luis@130.15.15.4
+elif [ "$1" == "down" ]; then
+  echo "disconnecting to QU server instance"
+
+  sudo umount ~/queensServer
+  ssh <remoteuser>@130.15.15.4 pkill -f jupyter
+
+else
+  echo "Please provide option, <up> or <down>"
+fi
+
