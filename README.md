@@ -18,7 +18,7 @@
 See `environment.yml` file
 
 ## Remote Development
-See the scripts directory
+See the scripts directory for server scripts to be run for remote dev. Also to be added later: the script for connecting to server instance locally and sshfs mounting for easy file viewing. Note: You need to setup local forwarding in ssh-config.
 
 ## Main dir
 See dl-melanoma-2
